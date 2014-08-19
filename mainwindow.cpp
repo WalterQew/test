@@ -52,6 +52,7 @@ void MainWindow::do_file_Save() //保存文件
         saveFile(curFile);
     else
         do_file_SaveAs();//如果文件是第一次保存，那么调用另存为
+    second_statusLabel->setText(tr("Success to save file!"));
 }
 
 void MainWindow::do_file_SaveAs()//文件另存为
