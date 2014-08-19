@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QLineEdit>
+#include <QLabel>
 
 namespace Ui {
 class MainWindow;
@@ -41,10 +42,14 @@ private slots:
 
     void on_actionFind_F_triggered();
 
+    void do_cursorChanged();//获取光标位置信息
+
 private:
     Ui::MainWindow *ui;
     bool isSaved;//为 true 时标志文件已经保存，为 false 时标志文件尚未保存
 
+    QLabel* first_statusLabel;//声明两个标签对象，用于显示状态信息
+    QLabel* second_statusLabel;
     QString curFile; //保存当前文件的文件名
     QLineEdit *find_textLineEdit;//声明个行编辑器，用于输入要查找的内容
     void do_file_New(); //新建文件
@@ -52,6 +57,7 @@ private:
     void do_file_Save();//保存文件
     void do_file_SaveAs();//文件另存为
     void do_file_Open(); //打开文件
+    void init_statusBar(); //初始化状态栏
     bool do_file_Load(const QString& fileName);//读取文件
     bool saveFile(const QString& fielName);//存储文件
 };
