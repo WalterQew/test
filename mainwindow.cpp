@@ -183,6 +183,7 @@ void MainWindow::on_actionFind_F_triggered()
     //显示对话框
     connect(find_Btn,SIGNAL(clicked()),this,SLOT(show_findText()));
     //设置“查找下一个”按钮的单击事件和其槽函数的关联
+    second_statusLabel->setText(tr("on finding"));
 }
 
 void MainWindow::show_findText()//“查找下一个”按钮的槽函数
