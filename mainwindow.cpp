@@ -108,6 +108,7 @@ bool MainWindow::do_file_Load(const QString &fileName)//读取文件
     ui->textEdit->setText(in.readAll());//将文件中的所有内容都写到文本编辑器中
     curFile=QFileInfo(fileName).canonicalFilePath();
     setWindowTitle(curFile);
+    second_statusLabel->setText("Success to open file");
     return true;
 }
 
