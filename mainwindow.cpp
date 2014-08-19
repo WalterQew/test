@@ -8,6 +8,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     init_statusBar();
+    connect(ui->textEdit,SIGNAL(cursorPositionChanged()),this,SLOT(do_cursorChanged()));
     isSaved=false; //初始化文件为未保存过状态
 
     curFile=tr("File1.txt"); //初始化文件名为“未命名.txt”
@@ -220,6 +221,6 @@ void MainWindow::do_cursorChanged()
     const QTextCursor cursor=ui->textEdit->textCursor();
     int colNum=cursor.columnNumber();
     //获取光标所在列的列号
-    first_statusLabel->setText(tr("%1 lines %2 rows").arg(rowNum).arg(colNum));
+    first_statusLabel->setText(tr("%1 rows %2 columns").arg(rowNum).arg(colNum));
     //在状态栏显示光标位置
 }
