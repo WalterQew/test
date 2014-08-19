@@ -137,6 +137,8 @@ void MainWindow::on_actionClose_C_triggered()
 {
     do_file_SaveOrNot();
     ui->textEdit->setVisible(false);
+    first_statusLabel->setText(tr("The editor is closed"));
+    second_statusLabel->setText(tr("Made by Qrj!"));
 }
 
 void MainWindow::on_actionExit_X_triggered()
